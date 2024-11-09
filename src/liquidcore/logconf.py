@@ -1,5 +1,7 @@
 import logging
 import structlog
+import sys
+import os
 
 
 def init(json: bool = False):

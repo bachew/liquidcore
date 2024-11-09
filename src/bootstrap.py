@@ -35,12 +35,15 @@ class Venv:
         self.pip_installs = [
             ['-U', 'pip'],
             ['-U', 'setuptools', 'wheel'],
-            'attrs',
-            'click',
-            'flake8',
-            'mypy',
-            'pytest',
-            'structlog',
+            [
+                'attrs',
+                'click',
+                'flake8',
+                'mypy',
+                'pytest',
+                'structlog',
+                'typing-extensions',
+            ]
         ]
 
         self.pyproject_mtime = 0
@@ -91,11 +94,8 @@ class Venv:
         pip_conf_file.write_text(self.pip_config)
         pip_prog = [self.python, '-m', 'pip']
 
-        for args in self.pip_installs:
-            if isinstance(args, str):
-                args = [args]
-
-            run([*pip_prog, 'install', *args])
+        for install_args in self.pip_installs:
+            run([*pip_prog, 'install', *install_args])
 
         self.updated_spec_file.write_bytes(pickle.dumps(self.spec))
 
