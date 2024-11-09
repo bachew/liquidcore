@@ -4,7 +4,7 @@ Template repo for Python tool, a tool where developer is expected to just clone 
 
 ```console
 $ git clone git@github.com:bachew/liquidcore.git
-$ liquidcore/bin/lc do-something
+$ liquidcore/bin/liquidcore do-something
 ```
 
 For Python library template repo, use [solidcore](https://github.com/bachew/liquidcore) instead.
@@ -12,23 +12,23 @@ For Python library template repo, use [solidcore](https://github.com/bachew/liqu
 
 ## Bootstrapping
 
-When `bin/lc` is run for the first time, Python virtual environment will be created.
+When `bin/liquidcore` is run for the first time, Python virtual environment will be created.
 
-Dependencies are specified in `src/bootstrap.py::Venv.pip_installs`, changes to `Venv` instance (e.g. `Venv.pip_installs`) causes virtual environment to be recreated on next `bin/lc`.
+Dependencies are specified in `src/bootstrap.py::Venv.pip_installs`, changes to `Venv` instance (e.g. `Venv.pip_installs`) causes virtual environment to be recreated on next `bin/liquidcore`.
 
 To run a command inside virtual environment:
 
 ```console
-$ bin/lc run which python
+$ bin/liquidcore run which python
 ```
 
 To enter virtual environment, spawn a subshell:
 
 ```console
-$ bin/lc run which pytest
-$ bin/lc run bash  # subshell
+$ bin/liquidcore run which pytest
+$ bin/liquidcore run bash  # subshell
 $ which pytest  # same as first command
-$ lc --help  # same as running 'bin/lc --help'
+$ liquidcore --help  # same as running 'bin/liquidcore --help'
 ```
 
 
@@ -43,5 +43,5 @@ $ pytest tests/test_example.py
 To include manual tests (those decorated with `@manual_test`):
 
 ```console
-$ MANUAL_TESTS=1 pytest tests/test_example.py --capture no
+$ include_manual=1 pytest tests/test_example.py --capture no
 ```

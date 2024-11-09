@@ -13,7 +13,7 @@ def tmp_dir(tmpdir):
 
 
 def manual_test(func):
-    if os.environ.get('manual_test') == '1':
+    if os.environ.get('include_manual') == '1':
         return func
 
     return pytest.mark.skip('manual test')(func)

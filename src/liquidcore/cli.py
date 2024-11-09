@@ -5,7 +5,7 @@ import click
 import subprocess
 
 
-@group('lc', context_settings={
+@group('liquidcore', context_settings={
     'show_default': True,
     'help_option_names': ['-h', '--help'],
 })
@@ -24,7 +24,7 @@ def cli(ctx, json, verbosity):
 @cli.command('test-logging')
 def cli_test_logging():
     '''
-    Test logging with lc -v and --json options.
+    Test logging with liquidcore -v and --json options.
     '''
     logger_names = [
         'liquidcore.sh',

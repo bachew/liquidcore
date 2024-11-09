@@ -9,4 +9,4 @@
 #
 # The environments variables will then be available, for example:
 #
-#   $ bin/lc run python -c 'import os; print(os.environ["DOCKER_CONFIG"])'
+#   $ bin/liquidcore run python -c 'import os; print(os.environ["DOCKER_CONFIG"])'
